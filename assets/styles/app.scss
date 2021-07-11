@@ -1,0 +1,130 @@
+body {
+    background-color: #DFDFDF;
+}
+
+.container-main {
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px dashed #000000;
+    border-radius: 5px;
+}
+
+.order {
+    background-color: #C6C6C6;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.order-header {
+    font-weight: bold;
+}
+
+.product-logo {
+    max-width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.product-logo-1 {
+    background: url("../images/random_logos.jpeg") -30px -20px;
+}
+
+.product-logo-2 {
+    background: url("../images/random_logos.jpeg") -110px -20px;
+}
+
+.product-logo-3 {
+    background: url("../images/random_logos.jpeg") -190px -20px;
+}
+
+.product-logo-4 {
+    background: url("../images/random_logos.jpeg") -30px -100px;
+}
+
+.product-logo-5 {
+    background: url("../images/random_logos.jpeg") -110px -100px;
+}
+
+.product-logo-6 {
+    background: url("../images/random_logos.jpeg") -192px -100px;
+}
+
+.product-logo-7 {
+    background: url("../images/random_logos.jpeg") -30px -180px;
+}
+
+.product-logo-8 {
+    background: url("../images/random_logos.jpeg") -110px -180px;
+}
+
+.product-logo-9 {
+    background: url("../images/random_logos.jpeg") -110px -180px;
+}
+
+.product-name {
+    padding-top: 8px;
+}
+
+.product-row {
+    margin-left: -10px;
+    padding: 1px 10px 1px 1px;
+    width: 100%;
+}
+
+.product-row:hover {
+    background-color: #C6C6C6;
+    cursor: pointer;
+}
+
+.product-details {
+    display: none;
+}
+
+.product-combinations {
+    padding: 10px;
+    margin: 10px 0px 20px 50px;
+    width: 78%;
+    border: 1px dotted #C6C6C6;
+    border-radius: 5px;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.badge-secondary {
+    color: #fff;
+    background-color: #6c757d;
+}
+
+.badge-success {
+    color: #fff;
+    background-color: #28a745;
+}
+
+.radio-product {
+    visibility: hidden;
+    position: fixed;
+    height: 0px;
+    width: 0px;
+}
+
+.form-error-icon {
+    margin-right: 10px;
+}
+
+.form-error {
+    font-size: larger;
+}
+
+.form-error > .invalid-feedback {
+    color: #721c24;
+    background-color: #f8d7da;
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: .25rem;
+    border: 1px solid #f5c6cb;
+}

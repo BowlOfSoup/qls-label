@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shipping Label</title>
+
+    <style>
+        {{ bootstrapCss }}
+    </style>
+</head>
+<body>
+    <div class="container container-main">
+        <h2>{{ brand.name }}</h2>
+
+        <p><strong>Overzicht bestelling:</strong></p>
+        <table>
+            <tr>
+                <th width="100px">Aantal</th>
+                <th width="500px">Product</th>
+            </tr>
+
+            {% for orderLine in orderLines %}
+                <tr>
+                    <td>{{ orderLine.number }}</td>
+                    <td>{{ orderLine.productName }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <hr>
+        Verder kan hier whatever informatie weergegeven worden.
+    </div>
+
+    <img src="{{ labelImage }}" alt="ActualLabel"/>
+</body>
+</html>

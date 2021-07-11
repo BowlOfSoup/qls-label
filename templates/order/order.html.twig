@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}QLS Order System{% endblock %}
+
+{% block body %}
+
+    <div class="container container-main">
+        <p>Bedankt voor het shoppen bij: <strong>{{ brand.name }}</strong>.</p>
+        <p>Je hebt het volgende besteld:</p>
+
+        <div class="order">
+            <div class="row order-header">
+                <div class="col-md-1">Aantal</div>
+                <div class="col-md-11">Product</div>
+            </div>
+
+            {% for orderLine in orderLines %}
+                <div class="row">
+                    <div class="col-md-1 align-right">{{ orderLine.number }}</div>
+                    <div class="col-md-11">{{ orderLine.productName }}</div>
+                </div>
+            {% endfor %}
+        </div>
+
+        {{ form_start(orderForm) }}
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Vul hieronder je adres in.</strong></p>
+
+
+                {{ form_row(orderForm.address) }}
+            </div>
+            <div class="col-md-6">
+                <p><strong>Kies hieronder je verzendmethode.</strong></p>
+
+                <div class="form-error">
+                    {{ form_errors(orderForm.product) }}
+                </div>
+
+                {% do orderForm.product.setRendered %}
+                {% do orderForm.product_combination.setRendered %}
+
+                {% set i = 1 %}
+                {% for product in products %}
+                    <div onclick="radioEnable('radio-product-{{ product.id }}')" >
+                        <input type="radio" class="radio-product" id="radio-product-{{ product.id }}" name="order_form[product]" value="{{ product.id }}">
+                        <div class="row product-row" data-toggle="collapse" data-target="#product-details-{{ i }}">
+                            <div class="col-md-3 product-logo product-logo-{{ random(1, 9) }}"></div>
+                            <div class="col-md-8 product-name">{{ product.name }}</div>
+                            <div class="col-md-2 align-right"><span class="badge badge-success">&euro;{{ product.pricing[0].price }},-</span></div>
+                        </div>
+
+                        <div class="product-combinations collapse" id="product-details-{{ i }}">
+                            {% for combination in product.combinations %}
+                                <div class="row" onclick="radioEnable('radio-combination-{{ combination.id }}')">
+                                    <div class="col-md-1"><input type="radio" id="radio-combination-{{ combination.id }}" name="order_form[product_combination]" value="{{ combination.id }}"></div>
+                                    <div class="col-md-9">{{ combination.name }}</div>
+                                    <div class="col-md-2 align-right">
+                                        {% if combination.totalPrice != 0 %}
+                                            <span class="badge badge-secondary">+ &euro;{{ combination.totalPrice }},-</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% set i = i + 1 %}
+                {% endfor %}
+            </div>
+        </div>
+        {{ form_end(orderForm) }}
+    </div>
+
+{% endblock %}
