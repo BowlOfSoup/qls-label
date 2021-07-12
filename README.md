@@ -2,7 +2,7 @@
 This serves as a POC to connect with QLS API's.
 
 ## Requirements
-* PHP 7.3 or higher
+* PHP 7.3 or higher (tested on)
 * Imagick PHP extension
 
 ## Installation
