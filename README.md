@@ -11,6 +11,7 @@ This serves as a POC to connect with QLS API's.
 3. Do `cp .env .env.local` and configure `QLS_API_USER` and `QLS_API_PASS`.
 
 ## Run
+You will need to have Symfony installed globally: [https://symfony.com/download]().
 `symfony serve --no-tls` and visit http://127.0.0.1:8000/
 
 ## What does it do?
