@@ -6,11 +6,19 @@ This serves as a POC to connect with QLS API's.
 * Imagick PHP extension
 
 ## Installation
-1. Git clone this repo
-2. Run `composer install` in the project root
-3. Do `cp .env .env.local` and configure `QLS_API_USER` and `QLS_API_PASS`.
+The front-end for the application has to be built with Yarn (NodeJS).
+
+1. Download NodeJS from: https://nodejs.org/en/download/
+2. Install Yarn globally: `npm install -g yarn`
+3. Git clone this repo: `git clone https://github.com/BowlOfSoup/qls-label.git`
+4. Run `composer install` in the project root
+5. Do `cp .env .env.local` and configure `QLS_API_USER` and `QLS_API_PASS`.
 
 ## Run
+Build the front-end:
+
+`yarn install && yarn build`
+
 You will need to have Symfony installed globally: [https://symfony.com/download]().
 
 `symfony serve --no-tls` and visit http://127.0.0.1:8000/
